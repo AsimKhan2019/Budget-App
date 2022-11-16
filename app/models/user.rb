@@ -4,9 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # attr_accessor :name, :email, :password, :password_confirmation
-
-  has_many :payments, dependent: :destroy
+  has_many :payments, foreign_key: 'author_id', dependent: :destroy
   validates :name, presence: true, length: { maximum: 250 }
-  has_many :categories, dependent: :destroy
+  has_many :categories, foreign_key: 'author_id', class_name: 'Category', dependent: :destroy
 end
