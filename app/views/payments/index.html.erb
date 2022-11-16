@@ -1,0 +1,21 @@
+<div class="d-grid justify-content-center">
+  <h4>Total Amount:</h4>
+  <span class="align-self-start"> <%= @payments.sum(&:amount) %> </span>
+  <br />
+  
+</div>
+<% @payments.each do |payment| %>
+<div class="container d-flex justify-content-center">
+  <div class="card mb-2" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div>
+        <div class="card-body">
+          <h5 class="card-title"> <%= payment.name %></h5>
+          <p class="card-text"> <%= payment.amount %></p>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= link_to 'New Payment', new_category_payment_path, class: 'btn btn-primary btn-sm' %>
