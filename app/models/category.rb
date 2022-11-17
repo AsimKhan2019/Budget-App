@@ -7,13 +7,3 @@ class Category < ApplicationRecord
   validates :icon, presence: true
   # validates :author_id, presence: true
 end
-
-# class Category < ApplicationRecord
-#   has_many :category_purchases
-#   has_many :purchases, through: :category_purchases
-# end
-
-# class CategoryPurchase < ApplicationRecord
-#   belongs_to :category
-#   belongs_to :purchase
-# end

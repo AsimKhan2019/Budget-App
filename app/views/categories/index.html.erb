@@ -1,27 +1,24 @@
-
-
-<div class="d-grid justify-content-center">
-  <%= link_to 'New Category', new_category_path, class: 'btn btn-primary btn-sm' %>
-  <br />
-
+<div class="cat-bar">
+  <div class="content">
+    <h4>Total Spent</h2>
+    <h3 class="cat-cost">$<%= @total %></h3>
+  </div>
 </div>
+<div class="cat-list">
 <% @categories.each do |g| %>
-  <div class="container d-flex justify-content-center">
-    <div class="container card d-flex justify-content-between">
-    <div class='row'>
-    <%=link_to category_path(g) do %>
-      <div class='col-md-4'>
+    <%=link_to category_payments_path(g), class:"cat card" do %>
+      <div class='cat-icon'>
         <img src="<%= g.icon %>" alt="Group Icon" width="50" height="50">
       </div>
     
-      <div class='col-md-4 card-title'>
+      <div class='cat-info'>
         <h3><%= g.name %></h3>
-        <span class="badge bg-primary"> <%= g.created_at.strftime("%B, %e at %H:%M") %> </span>
-        <h3><%= g.payments.sum(&:amount) %></h3>
-        </div>
+        <span> <%= g.created_at.strftime("%B, %e at %H:%M") %> </span>
         
+        </div>
+        <h3 class="cat-cost">$<%= g.payments.sum(&:amount) %></h3>
         <%end%>
-    </div>
-      </div>
-  </div>
 <% end %>
+<%= link_to 'Back', root_path, class: 'btn btn-primary btn-sm' %>
+<%= link_to 'Add a new Category', new_category_path, class: 'btn btn-primary btn-sm' %>
+</div>
