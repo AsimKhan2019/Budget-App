@@ -6,6 +6,9 @@ Budget App (Snack Time)
 Description the project.
 The Budget App records all the purchases made against different categories and sections in the consumer market. It helps to record and manage different items and their relevant expenses and details of those expense. This is the perfect ROR capstone project. 
 
+Live App Link
+https://ror-budget-capstone.herokuapp.com/users/sign_in
+
 Built With
 Languages: Ruby Frameworks: Ruby On Rails Technologies used: Visual Studio Code Requirements In order to work on this project, you need to have the following dependencies installed:
 
@@ -70,7 +73,8 @@ Show your support
 Give a ⭐️ if you like this project!
 
 Acknowledgments
-Microverse LazyCoders Coding Partners Inspiration etc
+Victor Peralta Gomez - A Microverse Legend and an Awesome Coder
+Ahmet - Technical Learning Assistance and a nice gentleman
 
 📝 License
 This project is MIT licensed.
