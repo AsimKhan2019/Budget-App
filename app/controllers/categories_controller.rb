@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.order(:id)
     @payments = @categories.map(&:payments)
+    @total = current_user.payments.all.sum(&:amount)
   end
 
   def show

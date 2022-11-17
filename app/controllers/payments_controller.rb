@@ -1,6 +1,5 @@
 class PaymentsController < ApplicationController
   def index
-    # @categories = Category.find(params[:category_id])
     @payments = current_user.payments.where(categories: params[:category_id])
   end
 
@@ -10,7 +9,7 @@ class PaymentsController < ApplicationController
     @payment = current_user.payments.build
     @categories = current_user.categories.order(:id)
     @user = current_user.id
-    # @categories = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id])
   end
 
   def edit

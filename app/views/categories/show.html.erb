@@ -1,9 +1,10 @@
 <div class="container">
   <div class="category-group">
     <div class="summary">
-      <p><%= @category.name %>
+      <h2><%= @category.name %></h2>
       
       <div class="button">
+      <%= link_to 'Back', categories_path, class: 'btn btn-primary btn-sm' %>
         <%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-primary btn-sm' %>
         <%= link_to 'Payments', category_payments_path(@category), class: 'btn btn-primary btn-sm' %>
       </div>
