@@ -1,0 +1,20 @@
+<%= form_with model: @payment, url: category_payments_path, method: :post, data: { turbo: false }, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_id, "Category" %>
+    <%= form.select :category_id,[["Select Category", nil]] + @categories.pluck(:name, :id), {}, class: "form-control" %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

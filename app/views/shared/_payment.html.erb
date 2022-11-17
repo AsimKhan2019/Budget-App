@@ -1,0 +1,23 @@
+<div class="transaction-widget-cont">
+  <div class="transaction-widget">
+    <%unless @externals%>
+      <div class="group-image thumb">
+        <img src="<%= @category ? @category.icon : payment.category.icon %>">
+      </div>
+    <%end%>
+      <div class="transaction-info">
+        <p class="d-flex space-b">
+          <span> <%= payment.name %></span> 
+          <span><%= payment.amount %> $</span>
+        </p>
+        <p class="d-flex space-b">
+          <span>Author:</span>  
+          <span> <%= payment.author.name %></span>
+        </p>
+        <span><%= payment.created_at.strftime("%m/%d/%Y")%></span>
+      </div>
+  </div>
+  <div class="button-widget">
+    <%= link_to 'Edit', edit_payment_path(payment), class: "button shadow blue-text" %>
+  </div>
+</div>

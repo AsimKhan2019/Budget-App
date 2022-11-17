@@ -1,0 +1,17 @@
+<div class="cat-bar">
+  <div class="content">
+    <h4>Total Amount</h2>
+    <h3 class="cat-cost">$<%= @payments.sum(&:amount) %></h3>
+  </div>
+</div>
+<div class="cat-list">
+<% @payments.each do |payment| %>
+        <div class="cat card">
+          <img src="<%= payment.category.icon %>" alt="Group Icon" width="50" height="50">
+          <h5 class="cat-info"> <%= payment.name %></h5>
+          <p class="cat-cost"> $ <%= payment.amount %></p>
+         </div>
+<% end %>
+<%= link_to 'Back', categories_path, class: 'btn btn-primary btn-sm' %>
+<%= link_to 'New Payment', new_category_payment_path, class: 'btn btn-primary btn-sm' %>
+</div>
